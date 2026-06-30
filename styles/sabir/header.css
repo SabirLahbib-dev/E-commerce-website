@@ -1,26 +1,31 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 3000px;
+  margin: 0;
+  padding: 0;
 }
 input,
 button,
 select {
   cursor: pointer;
 }
-p {
+p,
+div {
   padding: 0;
+  margin: 0;
 }
 header {
   position: fixed;
   top: 0;
-  left: 20px;
-  right: 20px;
+  left: 0px;
+  right: 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .logo-image {
   height: 100%;
