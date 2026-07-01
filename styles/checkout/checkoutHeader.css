@@ -1,0 +1,63 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 3000px;
+  margin: 0;
+  padding: 0;
+}
+input,
+button,
+select {
+  cursor: pointer;
+}
+p,
+div {
+  padding: 0;
+  margin: 0;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  position: fixed;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.logo-container {
+  height: 25px;
+}
+.logo-image {
+  height: 100%;
+}
+.checkout-quantity-items {
+  font-size: 20px;
+}
+
+.items-quantity {
+  color: #007185;
+  font-size: 18px;
+  cursor: pointer;
+}
+.sabir-page-link {
+  text-decoration: none;
+  color: #007185;
+}
+
+@media (min-width: 600px) {
+  .checkout-quantity-items {
+    font-size: 25px;
+  }
+  .items-quantity {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 1300px) {
+  header {
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+}
