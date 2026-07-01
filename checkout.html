@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout page</title>
     <link rel="stylesheet" href="styles/checkout/checkoutHeader.css" />
+    <link rel="stylesheet" href="styles/checkout/checkout.css" />
   </head>
   <body>
     <!--Checkout page header-->
@@ -24,5 +25,37 @@
       </div>
       <div><img src="images/icons/checkout-lock-icon.png" /></div>
     </header>
+
+    <!--Main-->
+    <main>
+      <h2>Review your order</h2>
+      <div class="checkout-grid">
+        <div class="order-summary">
+          <div class="order-summary-title">ORDER SUMMARY</div>
+          <div class="order-detail">
+            <p>items (3) :</p>
+            <p>$390.94</p>
+          </div>
+          <div class="order-detail">
+            <p>Shipping & handling:</p>
+            <p class="hr">$4.99</p>
+          </div>
+          <div class="order-detail">
+            <p>Total before tax:</p>
+            <p>$395.59</p>
+          </div>
+          <div class="order-detail">
+            <p>Estimated tax (10%):</p>
+            <p>$39.59</p>
+          </div>
+          <hr />
+          <div class="order-detail">
+            <p class="order-total">ORDER TOTAL:</p>
+            <p class="order-total">$435.52</p>
+          </div>
+          <button class="place-order-button">PLACE YOUR ORDER</button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

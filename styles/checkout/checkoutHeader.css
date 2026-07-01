@@ -21,9 +21,12 @@ header {
   align-items: center;
   height: 60px;
   position: fixed;
+  top: 0;
   width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: white;
+  z-index: 100;
 }
 .logo-container {
   height: 25px;
@@ -57,7 +60,7 @@ header {
 @media (min-width: 1300px) {
   header {
     width: 70%;
-    padding-left: 15%;
-    padding-right: 15%;
+    left: 15%;
+    right: 15%;
   }
 }
