@@ -10,7 +10,5 @@ export function hamburgerMenu() {
       } else {
         icon.src = "images/icons/menu-bar.png";
       }
-
-      console.log("click");
     });
 }
