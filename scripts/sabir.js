@@ -70,7 +70,7 @@ function renderProductsHTML() {
   document.querySelector(".js-products-grid").innerHTML = html;
 }
 
-async function renderSabirPage() {
+export async function renderSabirPage() {
   await loadProducts();
   renderProductsHTML();
 }

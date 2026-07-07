@@ -30,109 +30,7 @@
     <main>
       <h2>Review your order</h2>
       <div class="checkout-grid">
-        <div class="cart-items-container">
-          <!--Cart item 1-->
-          <div class="cart-item">
-            <div class="delivery-date">Delivery date: Friday, July 10</div>
-            <div class="cart-item-info-container">
-              <div class="image-and-info-container">
-                <div class="cart-item-image-container">
-                  <img
-                    src="images/products/athletic-cotton-socks-6-pairs.jpg"
-                    class="cart-item-image"
-                  />
-                </div>
-                <div class="cart-item-details">
-                  <p class="cart-item-title">
-                    Black and Gray Athletic Cotton Socks - 6 Pairs
-                  </p>
-                  <p class="cart-item-price">$10.90</p>
-                  <div class="cart-item-management-links">
-                    <p>Quantity: 17</p>
-                    <input type="number" class="update-quantity-input" />
-                    <div class="save-quantity-link">Save</div>
-                    <div class="update-link">Update</div>
-                    <div class="delete-link">Delete</div>
-                  </div>
-                </div>
-              </div>
-              <div class="delivery-options">
-                <p class="delivery-option-title">Choose a delivery option :</p>
-                <div class="delivery-option">
-                  <input type="radio" class="radio-input" />
-                  <div class="delivery-infos">
-                    <p class="delivery-option-date">Friday, July 10</p>
-                    <p class="delivery-option-status">FREE Shipping</p>
-                  </div>
-                </div>
-                <div class="delivery-option">
-                  <input type="radio" class="radio-input" />
-                  <div class="delivery-infos">
-                    <p class="delivery-option-date">Tuesday, July 13</p>
-                    <p class="delivery-option-status">$4.99 - Shipping</p>
-                  </div>
-                </div>
-                <div class="delivery-option">
-                  <input type="radio" class="radio-input" />
-                  <div class="delivery-infos">
-                    <p class="delivery-option-date">Monday, July 18</p>
-                    <p class="delivery-option-status">$9.99 - Shipping</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--Cart item 2-->
-          <div class="cart-item">
-            <div class="delivery-date">Delivery date: Friday, July 10</div>
-            <div class="cart-item-info-container">
-              <div class="image-and-info-container">
-                <div class="cart-item-image-container">
-                  <img
-                    src="images/products/6-piece-white-dinner-plate-set.jpg"
-                    class="cart-item-image"
-                  />
-                </div>
-                <div class="cart-item-details">
-                  <p class="cart-item-title">6 Piece White Dinner Plate Set</p>
-                  <p class="cart-item-price">$20.67</p>
-                  <div class="cart-item-management-links">
-                    <p>Quantity: 8</p>
-                    <input type="number" class="update-quantity-input" />
-                    <div class="save-quantity-link">Save</div>
-                    <div class="update-link">Update</div>
-                    <div class="delete-link">Delete</div>
-                  </div>
-                </div>
-              </div>
-              <div class="delivery-options">
-                <p class="delivery-option-title">Choose a delivery option :</p>
-                <div class="delivery-option">
-                  <input type="radio" class="radio-input" />
-                  <div class="delivery-infos">
-                    <p class="delivery-option-date">Friday, July 10</p>
-                    <p class="delivery-option-status">FREE Shipping</p>
-                  </div>
-                </div>
-                <div class="delivery-option">
-                  <input type="radio" class="radio-input" />
-                  <div class="delivery-infos">
-                    <p class="delivery-option-date">Tuesday, July 13</p>
-                    <p class="delivery-option-status">$4.99 - Shipping</p>
-                  </div>
-                </div>
-                <div class="delivery-option">
-                  <input type="radio" class="radio-input" />
-                  <div class="delivery-infos">
-                    <p class="delivery-option-date">Monday, July 18</p>
-                    <p class="delivery-option-status">$9.99 - Shipping</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="cart-items-container js-cart-items-container"></div>
         <div class="order-summary">
           <div class="order-summary-title">ORDER SUMMARY</div>
           <div class="order-detail">
@@ -161,4 +59,5 @@
       </div>
     </main>
   </body>
+  <script src="scripts/checkout.js" type="module"></script>
 </html>
