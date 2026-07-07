@@ -10,7 +10,7 @@ if (!cart) {
     },
     {
       productId: "15b6fc6f-327a-4ec4-896f-486349e85a3d",
-      quantity: 2,
+      quantity: 5,
       deliveryOptionId: 1,
     },
   ];
@@ -28,4 +28,13 @@ export function getProduct(productId) {
     }
   });
   return matchingProduct;
+}
+
+export function calculateCartQuantity() {
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  return cartQuantity;
 }

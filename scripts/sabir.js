@@ -5,6 +5,7 @@ import {
   Clothing,
   Products,
 } from "../data/products.js";
+import { calculateCartQuantity } from "../data/cart.js";
 
 hamburgerMenu();
 
@@ -68,6 +69,7 @@ function renderProductsHTML() {
     `;
   });
   document.querySelector(".js-products-grid").innerHTML = html;
+  document.querySelector(".js-cart-quantity").innerHTML = `CART(${calculateCartQuantity()})`;
 }
 
 export async function renderSabirPage() {
