@@ -69,12 +69,17 @@ function renderProductsHTML() {
     `;
   });
   document.querySelector(".js-products-grid").innerHTML = html;
-  document.querySelector(".js-cart-quantity").innerHTML = `CART(${calculateCartQuantity()})`;
+  document.querySelector(".js-cart-quantity").innerHTML =
+    `CART(${calculateCartQuantity()})`;
 }
 
 export async function renderSabirPage() {
-  await loadProducts();
-  renderProductsHTML();
+  try {
+    await loadProducts();
+    renderProductsHTML();
+  } catch (error) {
+    console.error("Unexpected error. Please try again later.");
+  }
 }
 
 renderSabirPage();
