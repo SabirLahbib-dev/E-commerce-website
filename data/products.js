@@ -580,3 +580,13 @@ export async function loadProducts() {
     }
   });
 }
+
+export function getProduct(productId) {
+  let matchingProduct;
+  products.forEach((product) => {
+    if (productId === product.id) {
+      matchingProduct = product;
+    }
+  });
+  return matchingProduct;
+}
