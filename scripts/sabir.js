@@ -19,6 +19,7 @@ function renderProductsHTML() {
             src=${product.image}
             alt="Black and Gray Athletic Cotton Socks"
             class="product-image"
+            loading="lazy"
           />
         </div>
 
