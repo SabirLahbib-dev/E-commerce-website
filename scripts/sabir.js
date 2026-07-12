@@ -5,7 +5,11 @@ import {
   Clothing,
   Products,
 } from "../data/products.js";
-import { calculateCartQuantity } from "../data/cart.js";
+import {
+  calculateCartQuantity,
+  cart,
+  saveToLocalStorage,
+} from "../data/cart.js";
 
 hamburgerMenu();
 
@@ -39,7 +43,7 @@ function renderProductsHTML() {
         <div class="product-price">$${product.getPrice()}</div>
 
         <div class="product-quantity-container">
-          <select class="quantity-selector">
+          <select class="quantity-selector js-quantity-selector-${product.id}">
             <option selected>1</option>
             <option>2</option>
             <option>3</option>
@@ -57,12 +61,12 @@ function renderProductsHTML() {
         ${product.getExtraInfo()}
         </div>
 
-        <div class="added-to-cart">
+        <div class="added-to-cart js-added-to-cart-${product.id}">
           <img src="images/icons/checkmark.png" class="checkmark-icon" alt="" />
           Added
         </div>
 
-        <button class="add-to-cart-button">
+        <button class="add-to-cart-button js-add-to-cart-button" data-product-id="${product.id}">
           <img src="images/icons/iadd-icon.png" class="add-icon" alt="" />
           ADD TO CART
         </button>
@@ -72,6 +76,37 @@ function renderProductsHTML() {
   document.querySelector(".js-products-grid").innerHTML = html;
   document.querySelector(".js-cart-quantity").innerHTML =
     `CART(${calculateCartQuantity()})`;
+
+  // add to cart
+  document
+    .querySelectorAll(".js-add-to-cart-button")
+    .forEach((addToCartButton) => {
+      let setTimeoutID;
+      addToCartButton.addEventListener("click", () => {
+        const { productId } = addToCartButton.dataset;
+
+        let quantityChosen = Number(
+          document.querySelector(`.js-quantity-selector-${productId}`).value,
+        );
+
+        const addedToCartMessage = document.querySelector(
+          `.js-added-to-cart-${productId}`,
+        );
+
+        addedToCartMessage.classList.add("active");
+
+        clearTimeout(setTimeoutID);
+
+        setTimeoutID = setTimeout(() => {
+          addedToCartMessage.classList.remove("active");
+        }, 2000);
+
+        addToCart(productId, quantityChosen);
+
+        document.querySelector(".js-cart-quantity").innerHTML =
+          `CART(${calculateCartQuantity()})`;
+      });
+    });
 }
 
 export async function renderSabirPage() {
@@ -84,3 +119,24 @@ export async function renderSabirPage() {
 }
 
 renderSabirPage();
+
+function addToCart(productId, quantity) {
+  let existedProduct;
+
+  cart.forEach((cartItem) => {
+    if (cartItem.productId === productId) {
+      existedProduct = cartItem;
+    }
+  });
+
+  if (existedProduct) {
+    existedProduct.quantity += quantity;
+  } else {
+    cart.push({
+      productId: productId,
+      quantity: quantity,
+      deliveryOptionId: "1",
+    });
+  }
+  saveToLocalStorage();
+}

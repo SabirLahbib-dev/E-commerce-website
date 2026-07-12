@@ -145,6 +145,9 @@ hr {
   text-decoration: underline;
   cursor: pointer;
 }
+.cart-item-quantity {
+  flex-shrink: 0;
+}
 
 /* after clicking update link */
 .update-link-after {

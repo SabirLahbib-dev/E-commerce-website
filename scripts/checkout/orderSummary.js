@@ -12,6 +12,7 @@ import {
 } from "../../data/deliveryOption.js";
 import { getProduct } from "../../data/products.js";
 import { renderCheckoutHeader } from "./checkoutHeader.js";
+import { formatCurrency } from "../utils/formatCurrency.js";
 
 export function renderOrderSummaryHTML() {
   let html = ``;
@@ -33,9 +34,9 @@ export function renderOrderSummaryHTML() {
                   <p class="cart-item-title">
                     ${product.name}
                   </p>
-                  <p class="cart-item-price">$10.90</p>
+                  <p class="cart-item-price">$${formatCurrency(product.priceCents)}</p>
                   <div class="cart-item-management-links">
-                    <p>Quantity: ${cartItem.quantity}</p>
+                    <p class="cart-item-quantity">Quantity: ${cartItem.quantity}</p>
                     <input type="text" class="update-quantity-input update-quantity-input-${product.id}" data-product-id="${product.id}"/>
                     <div class="save-quantity-link js-save-quantity-link-${product.id}" data-product-id="${product.id}">Save</div>
                     <div class="update-link js-update-link js-update-link-${product.id}" data-product-id="${product.id}">Update</div>

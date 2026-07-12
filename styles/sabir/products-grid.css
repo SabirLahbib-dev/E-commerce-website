@@ -207,3 +207,8 @@ main {
     grid-template-columns: 1fr;
   }
 }
+
+/* after clicking the add to cart button */
+.active {
+  opacity: 1;
+}
