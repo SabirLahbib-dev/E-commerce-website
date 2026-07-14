@@ -158,7 +158,11 @@ function attachEventListeners() {
         .querySelector(`.js-update-link-${productId}`)
         .classList.remove("update-link-after");
 
-      updatecartItemQuantity(productId, quantity);
+      if (quantity === 0) {
+        deleteFromTheCart(productId);
+      } else {
+        updatecartItemQuantity(productId, quantity);
+      }
 
       renderCheckoutHeader();
       renderOrderSummaryHTML();
@@ -186,7 +190,11 @@ function attachEventListeners() {
             .querySelector(`.js-update-link-${productId}`)
             .classList.remove("update-link-after");
 
-          updatecartItemQuantity(productId, quantity);
+          if (quantity === 0) {
+            deleteFromTheCart(productId);
+          } else {
+            updatecartItemQuantity(productId, quantity);
+          }
 
           renderCheckoutHeader();
           renderOrderSummaryHTML();

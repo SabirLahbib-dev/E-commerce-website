@@ -47,6 +47,8 @@ export function deleteFromTheCart(cartItemID) {
 // update cart item quantity
 export function updatecartItemQuantity(productID, quantity) {
   let matchingProuct;
+  const maxQuantity = 99;
+
   cart.forEach((cartItem) => {
     if (cartItem.productId === productID) {
       matchingProuct = cartItem;
@@ -54,7 +56,9 @@ export function updatecartItemQuantity(productID, quantity) {
   });
 
   if (!quantity || quantity < 0) {
-    matchingProuct.quantity = 0;
+    matchingProuct.quantity = 1;
+  } else if (quantity > maxQuantity) {
+    return;
   } else {
     matchingProuct.quantity = quantity;
   }
