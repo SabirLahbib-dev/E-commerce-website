@@ -193,6 +193,53 @@ hr {
   font-size: 15px;
 }
 
+/* empty cart feedback design */
+
+h1,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+.empty-cart-message-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.view-products-button {
+  height: 40px;
+  border: none;
+  background-color: black;
+  color: white;
+  width: 200px;
+  cursor: pointer;
+}
+.view-products-button:hover {
+  opacity: 0.85;
+  transition: opacity 0.15s;
+}
+.empty-cart-title {
+  margin-bottom: 6px;
+  font-weight: lighter;
+  text-align: center;
+}
+.empty-cart-second-title {
+  margin-bottom: 25px;
+  color: #626e75;
+  font-weight: lighter;
+  text-align: center;
+}
+.empty-cart-icon-container {
+  height: 100px;
+  margin-bottom: 10px;
+}
+.empty-cart-icon {
+  height: 100%;
+}
+
+/* responsive */
 @media (max-width: 1025px) {
   .checkout-grid {
     grid-template-columns: 1fr;
