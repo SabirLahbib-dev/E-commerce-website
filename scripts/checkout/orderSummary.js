@@ -13,6 +13,7 @@ import {
 import { getProduct } from "../../data/products.js";
 import { renderCheckoutHeader } from "./checkoutHeader.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummaryHTML() {
   let html = ``;
@@ -108,6 +109,7 @@ function attachEventListeners() {
 
       updateDeliveryOption(productId, deliveryId);
       renderOrderSummaryHTML();
+      renderPaymentSummary();
     });
   });
 
@@ -118,6 +120,7 @@ function attachEventListeners() {
       deleteFromTheCart(productId);
       renderOrderSummaryHTML();
       renderCheckoutHeader();
+      renderPaymentSummary();
     });
   });
 
@@ -166,6 +169,7 @@ function attachEventListeners() {
 
       renderCheckoutHeader();
       renderOrderSummaryHTML();
+      renderPaymentSummary();
     });
   });
 
@@ -198,6 +202,7 @@ function attachEventListeners() {
 
           renderCheckoutHeader();
           renderOrderSummaryHTML();
+          renderPaymentSummary();
         }
       });
     });

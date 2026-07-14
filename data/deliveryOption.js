@@ -70,3 +70,14 @@ export function updateDeliveryOption(productId, id) {
   matchingProduct.deliveryOptionId = id;
   saveToLocalStorage();
 }
+
+export function ObtainDeliveryPriceCents(deliveryOptionId) {
+  let matchingDeliveryOption;
+  deliveryOptions.forEach((deliveryOption) => {
+    if (deliveryOption.id === deliveryOptionId) {
+      matchingDeliveryOption = deliveryOption;
+    }
+  });
+
+  return matchingDeliveryOption.deliveryPriceCents;
+}
