@@ -9,6 +9,7 @@ import {
   calculateCartQuantity,
   cart,
   saveToLocalStorage,
+  addToCart
 } from "../data/cart.js";
 
 hamburgerMenu();
@@ -120,23 +121,4 @@ export async function renderSabirPage() {
 
 renderSabirPage();
 
-function addToCart(productId, quantity) {
-  let existedProduct;
 
-  cart.forEach((cartItem) => {
-    if (cartItem.productId === productId) {
-      existedProduct = cartItem;
-    }
-  });
-
-  if (existedProduct) {
-    existedProduct.quantity += quantity;
-  } else {
-    cart.push({
-      productId: productId,
-      quantity: quantity,
-      deliveryOptionId: "1",
-    });
-  }
-  saveToLocalStorage();
-}

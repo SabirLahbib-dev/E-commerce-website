@@ -65,3 +65,25 @@ export function updatecartItemQuantity(productID, quantity) {
 
   saveToLocalStorage();
 }
+
+// add to cart
+export function addToCart(productId, quantity) {
+  let existedProduct;
+
+  cart.forEach((cartItem) => {
+    if (cartItem.productId === productId) {
+      existedProduct = cartItem;
+    }
+  });
+
+  if (existedProduct) {
+    existedProduct.quantity += quantity;
+  } else {
+    cart.push({
+      productId: productId,
+      quantity: quantity,
+      deliveryOptionId: "1",
+    });
+  }
+  saveToLocalStorage();
+}
