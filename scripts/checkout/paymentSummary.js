@@ -2,6 +2,7 @@ import { cart, calculateCartQuantity } from "../../data/cart.js";
 import { getProduct } from "../../data/products.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
 import { ObtainDeliveryPriceCents } from "../../data/deliveryOption.js";
+import { createOrdersList } from "../../data/orders.js";
 
 function calculateOrderPaymentDetails() {
   let itemsPriceCents = 0;
@@ -64,6 +65,13 @@ export function renderPaymentSummary() {
             <p class="order-total">ORDER TOTAL:</p>
             <p class="order-total">$${formatCurrency(orderTotalPriceCents)}</p>
           </div>
-          <button class="place-order-button">PLACE YOUR ORDER</button>
+          <button class="place-order-button js-place-order-button">PLACE YOUR ORDER</button>
   `;
+
+  document
+    .querySelector(".js-place-order-button")
+    .addEventListener("click", () => {
+      window.location.href = "orders.html";
+      createOrdersList(cart);
+    });
 }
