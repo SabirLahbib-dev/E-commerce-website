@@ -5,7 +5,9 @@ import {
 } from "../data/orders.js";
 import { getProduct, loadProducts } from "../data/products.js";
 import { calculateCartQuantity, addToCart } from "../data/cart.js";
+import { hamburgerMenu } from "../scripts/shared/humbergerMenu.js";
 
+hamburgerMenu();
 // render the orders HTML
 async function renderOrdersHTML() {
   let orderPageHTML = `<h2>YOUR ORDERS</h2>`;
@@ -120,7 +122,7 @@ function attachEventListeners() {
       const { orderedProductId } = button.dataset;
       const { orderId } = button.dataset;
 
-      window.location.href = `tracking.html?productId="${orderedProductId}"&orderId="${orderId}"`;
+      window.location.href = `tracking.html?productId=${orderedProductId}&orderId=${orderId}`;
     });
   });
 }

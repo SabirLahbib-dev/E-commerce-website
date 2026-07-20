@@ -18,13 +18,14 @@
             class="hamburger-menu-icon"
           />
         </button>
-        <div class="logo-container">
-          <img
-            src="images/sabir-logo.png"
-            alt="sabir logo"
-            class="logo-image"
-          />
-        </div>
+        <a href="sabir.html" class="sabir-page-link"
+          ><div class="logo-container">
+            <img
+              src="images/sabir-logo.png"
+              alt="sabir logo"
+              class="logo-image"
+            /></div
+        ></a>
         <ul class="desktop-categories-links">
           <li class="desktop-category-link">WOMEN</li>
           <li class="desktop-category-link">MEN</li>
@@ -40,7 +41,7 @@
         </button>
       </div>
       <a href="checkout.html" class="a-link"
-        ><div class="cart-quantity">CART(3)</div></a
+        ><div class="cart-quantity js-cart-quantity">CART()</div></a
       >
     </header>
     <!--Sidebar for mobile-->
@@ -54,32 +55,8 @@
     </aside>
     <!--Main-->
     <main>
-      <a href="orders.html"
-        ><button class="back-to-orders-button">
-          <img src="images/icons/back.png" class="back-icon" /> BACK TO ORDERS
-        </button></a
-      >
-      <div class="arriving-date">Arriving on Tuesday, July 14</div>
-      <div class="order-name">
-        Black and Gray Athletic Cotton Socks - 6 Pairs
-      </div>
-      <div class="order-quantity">Quantity: 1</div>
-
-      <div class="order-image-container">
-        <img
-          src="images/products/athletic-cotton-socks-6-pairs.jpg"
-          class="order-image"
-        />
-      </div>
-      <div class="preparing-Shipped-Delivered-container">
-        <span class="current-status-label">PREPARING</span>
-        <span>SHIPPED</span>
-        <span>DELIVERED</span>
-      </div>
-      <div class="status-progress-bar">
-        <div class="bar" style="width: 19%"></div>
-      </div>
+      <div class="js-product-details-container"></div>
     </main>
+    <script src="scripts/tracking.js" type="module"></script>
   </body>
-  <script src="scripts/tracking.js" type="module"></script>
 </html>

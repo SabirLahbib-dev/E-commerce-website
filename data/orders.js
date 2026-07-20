@@ -5,6 +5,7 @@ import {
 } from "../data/deliveryOption.js";
 import { getProduct, loadProducts, products } from "./products.js";
 import { formatCurrency } from "../scripts/utils/formatCurrency.js";
+import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 
 export let orders = JSON.parse(localStorage.getItem("orders"));
 
@@ -26,6 +27,7 @@ export function createOrdersList(cart) {
       order = {
         deliveryOptionId: cartItem.deliveryOptionId,
         orderId: crypto.randomUUID(),
+        orderDate: dayjs(),
         orderProducts: [],
       };
 
