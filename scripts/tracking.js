@@ -5,6 +5,7 @@ import dayjs from "https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js";
 import { calculateCartQuantity } from "../data/cart.js";
 import { getCurrentDeliveryStatus } from "./utils/deliveryStatus.js";
 import { searchFeatureEventListener } from "./shared/searchEventListener.js";
+import { searchProductsByCategories } from "./shared/searchPoductsByCategories.js";
 
 hamburgerMenu();
 
@@ -87,6 +88,9 @@ async function renderTrackingPageHTML() {
 
   // search feature
   searchFeatureEventListener();
+
+  // categories links
+  searchProductsByCategories();
 }
 
 renderTrackingPageHTML();

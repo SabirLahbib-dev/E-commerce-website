@@ -12,11 +12,16 @@ import {
   addToCart,
 } from "../data/cart.js";
 import { searchFeatureEventListener } from "./shared/searchEventListener.js";
+import { searchProductsByCategories } from "./shared/searchPoductsByCategories.js";
 
 hamburgerMenu();
 
 function renderProductsHTML() {
+  // search feautre
   searchFeatureEventListener();
+
+  // categories links
+  searchProductsByCategories();
 
   let filteredProducts = [];
 
@@ -25,7 +30,6 @@ function renderProductsHTML() {
 
   // search feature
   if (searchKeyWords) {
-    console.log(searchKeyWords);
     filteredProducts = products.filter((product) => {
       return (
         product.name.toLowerCase().includes(searchKeyWords.toLowerCase()) ||
@@ -34,7 +38,6 @@ function renderProductsHTML() {
         })
       );
     });
-    console.log(filteredProducts);
   } else {
     filteredProducts = products;
   }

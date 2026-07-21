@@ -18,39 +18,74 @@
             class="hamburger-menu-icon"
           />
         </button>
-        <a href="sabir.html" class="sabir-page-link"
-          ><div class="logo-container">
-            <img
+        <div class="logo-container">
+          <a href="sabir.html"
+            ><img
               src="images/sabir-logo.png"
               alt="sabir logo"
               class="logo-image"
-            /></div
-        ></a>
+          /></a>
+        </div>
         <ul class="desktop-categories-links">
-          <li class="desktop-category-link">WOMEN</li>
-          <li class="desktop-category-link">MEN</li>
-          <li class="desktop-category-link">HOME</li>
-          <li class="desktop-category-link">BEAUTY</li>
+          <li
+            class="desktop-category-link js-category-link"
+            data-category="women"
+          >
+            WOMEN
+          </li>
+          <li
+            class="desktop-category-link js-category-link"
+            data-category="men"
+          >
+            MEN
+          </li>
+          <li
+            class="desktop-category-link js-category-link"
+            data-category="home"
+          >
+            HOME
+          </li>
+          <li
+            class="desktop-category-link js-category-link"
+            data-category="beauty"
+          >
+            BEAUTY
+          </li>
         </ul>
       </div>
       <div class="search-bar-container">
         <img src="images/icons/search-icon.png" class="search-icon" />
-        <input type="search" placeholder="Search" class="search-bar  js-search-bar" />
+        <input
+          type="search"
+          placeholder="Search"
+          class="search-bar js-search-bar"
+        />
         <button class="search-button js-search-button">
           <img src="images/icons/right-arrow.png" class="arrow-icon" />
         </button>
       </div>
       <a href="checkout.html" class="a-link"
-        ><div class="cart-quantity js-cart-quantity">CART()</div></a
-      >
+        ><div class="cart-quantity js-cart-quantity"></div
+      ></a>
     </header>
     <!--Sidebar for mobile-->
     <aside class="mobile-side-bar">
       <ul class="mobile-categories-links">
-        <li class="mobile-category-link">WOMEN</li>
-        <li class="mobile-category-link">MEN</li>
-        <li class="mobile-category-link">HOME</li>
-        <li class="mobile-category-link">BEAUTY</li>
+        <li class="mobile-category-link js-category-link" data-category="women">
+          WOMEN
+        </li>
+        <li class="mobile-category-link js-category-link" data-category="men">
+          MEN
+        </li>
+        <li class="mobile-category-link js-category-link" data-category="home">
+          HOME
+        </li>
+        <li
+          class="mobile-category-link js-category-link"
+          data-category="beauty"
+        >
+          BEAUTY
+        </li>
       </ul>
     </aside>
     <!--Main-->

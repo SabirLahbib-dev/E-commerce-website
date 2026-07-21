@@ -7,6 +7,7 @@ import { getProduct, loadProducts } from "../data/products.js";
 import { calculateCartQuantity, addToCart } from "../data/cart.js";
 import { hamburgerMenu } from "../scripts/shared/humbergerMenu.js";
 import { searchFeatureEventListener } from "./shared/searchEventListener.js";
+import { searchProductsByCategories } from "./shared/searchPoductsByCategories.js";
 
 hamburgerMenu();
 // render the orders HTML
@@ -129,4 +130,6 @@ function attachEventListeners() {
 
   // search feature
   searchFeatureEventListener();
+  // categories links
+  searchProductsByCategories();
 }
