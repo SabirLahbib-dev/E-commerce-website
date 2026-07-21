@@ -6,6 +6,7 @@ import {
 import { getProduct, loadProducts } from "../data/products.js";
 import { calculateCartQuantity, addToCart } from "../data/cart.js";
 import { hamburgerMenu } from "../scripts/shared/humbergerMenu.js";
+import { searchFeatureEventListener } from "./shared/searchEventListener.js";
 
 hamburgerMenu();
 // render the orders HTML
@@ -125,4 +126,7 @@ function attachEventListeners() {
       window.location.href = `tracking.html?productId=${orderedProductId}&orderId=${orderId}`;
     });
   });
+
+  // search feature
+  searchFeatureEventListener();
 }

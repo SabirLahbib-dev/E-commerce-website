@@ -9,14 +9,39 @@ import {
   calculateCartQuantity,
   cart,
   saveToLocalStorage,
-  addToCart
+  addToCart,
 } from "../data/cart.js";
+import { searchFeatureEventListener } from "./shared/searchEventListener.js";
 
 hamburgerMenu();
 
 function renderProductsHTML() {
+  searchFeatureEventListener();
+
+  let filteredProducts = [];
+
+  const params = new URLSearchParams(window.location.search);
+  const searchKeyWords = params.get("search");
+
+  // search feature
+  if (searchKeyWords) {
+    console.log(searchKeyWords);
+    filteredProducts = products.filter((product) => {
+      return (
+        product.name.toLowerCase().includes(searchKeyWords.toLowerCase()) ||
+        product.keywords.some((keyWord) => {
+          return keyWord.toLowerCase().includes(searchKeyWords.toLowerCase());
+        })
+      );
+    });
+    console.log(filteredProducts);
+  } else {
+    filteredProducts = products;
+  }
+
+  // html
   let html = ``;
-  products.forEach((product) => {
+  filteredProducts.forEach((product) => {
     html += `
     <article class="product-container">
         <div class="product-image-container">
@@ -115,10 +140,8 @@ export async function renderSabirPage() {
     await loadProducts();
     renderProductsHTML();
   } catch (error) {
-    console.error("Unexpected error. Please try again later.");
+    console.error(`Unexpected error(${error}). Please try again later.`);
   }
 }
 
 renderSabirPage();
-
-
