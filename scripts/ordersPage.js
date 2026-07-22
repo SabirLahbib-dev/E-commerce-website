@@ -59,7 +59,7 @@ async function renderOrdersHTML() {
                     class="buy-it-again-icon"
                   /><span class="js-button-text">BUY IT AGAIN</span>
                 </button>
-                <button class="mobile-track-package-button">
+                <button class="mobile-track-package-button js-track-package-button" data-ordered-product-id="${matchingProduct.id}" data-order-id="${order.orderId}">
                   TRACK PACKAGE
                 </button>
               </div>

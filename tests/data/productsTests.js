@@ -1,6 +1,6 @@
 import { products, Products, Clothing } from "../../data/products.js";
 
-describe("Test suite:", () => {
+describe("Test suite: Products", () => {
   let product1;
   beforeEach(() => {
     product1 = new Products({
