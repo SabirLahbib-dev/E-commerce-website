@@ -26,9 +26,9 @@ export function getDeliveryPrice(priceCents) {
   return deliveryPrice;
 }
 
-export function calculateDeliveryDates(deliveryDays) {
+export function calculateDeliveryDates(deliveryDays, today = dayjs()) {
   let daysAdded = 0;
-  let deliveryDate = dayjs();
+  let deliveryDate = today;
 
   while (daysAdded < deliveryDays) {
     deliveryDate = deliveryDate.add(1, "day");
@@ -43,7 +43,7 @@ export function calculateDeliveryDates(deliveryDays) {
   return deliveryDate.format("dddd MMMM DD");
 }
 
-export function getDeliveryDate(productId) {
+export function getDeliveryDate(productId, today = dayjs()) {
   let matchingProduct;
   let matchingDeliveryOption;
   cart.forEach((cartItem) => {
@@ -56,7 +56,7 @@ export function getDeliveryDate(productId) {
       matchingDeliveryOption = deliveryOption;
     }
   });
-  return calculateDeliveryDates(matchingDeliveryOption.deliveryDays);
+  return calculateDeliveryDates(matchingDeliveryOption.deliveryDays, today);
 }
 
 export function updateDeliveryOption(productId, id) {
